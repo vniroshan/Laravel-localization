@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/data/{lang}', 'App\Http\Controllers\LangController@getData');
+Route::get('/data/{lang}/{id}', 'App\Http\Controllers\LangController@getData');
+Route::get('/data/{lang}', 'App\Http\Controllers\LangController@getAllData');
+Route::post('/data/add', 'App\Http\Controllers\LangController@addData');
